@@ -16,7 +16,7 @@ class PlayersNameScreen extends StatelessWidget {
         return Scaffold(
           appBar: AppBar(
             title: Transform.translate(
-              offset: const Offset(20.0, 0.0),
+              offset: const Offset(15.0, 0.0),
               child: const Text(
                 'Enter players names',
                 style: TextStyle(

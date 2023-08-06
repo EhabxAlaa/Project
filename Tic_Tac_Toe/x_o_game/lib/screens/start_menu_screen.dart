@@ -26,7 +26,7 @@ class StartMenuScreenState extends State<StartMenuScreen> {
               child: Text(
                 "Tic-Tac-Toe Game",
                 style: TextStyle(
-                    fontSize: 35,
+                    fontSize: 28,
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
               ),
