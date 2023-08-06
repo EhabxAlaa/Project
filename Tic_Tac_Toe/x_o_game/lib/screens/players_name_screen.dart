@@ -15,7 +15,16 @@ class PlayersNameScreen extends StatelessWidget {
 
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Select players names'),
+            title: Transform.translate(
+              offset: const Offset(20.0, 0.0),
+              child: const Text(
+                'Enter players names',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
+                ),
+              ),
+            ),
           ),
           body: Padding(
             padding: const EdgeInsets.all(20.0),
@@ -30,7 +39,7 @@ class PlayersNameScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 25,
                 ),
                 TextField(
                   controller: cubit.secondPlayerNameController,
@@ -40,13 +49,13 @@ class PlayersNameScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 25,
                 ),
                 Center(
                   child: TextButton(
                     child: const Text(
                       "Next",
-                      style: TextStyle(fontSize: 35, color: Colors.blue),
+                      style: TextStyle(fontSize: 40, color: Colors.blue),
                     ),
                     onPressed: () {
                       cubit.goToGameScreen(context);

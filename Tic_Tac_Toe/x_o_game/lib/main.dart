@@ -15,6 +15,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: "Tic Tac Toe",
       home: BlocProvider(
         create: (context) => TicTacToeCubit(),
         child: const StartMenuScreen(),

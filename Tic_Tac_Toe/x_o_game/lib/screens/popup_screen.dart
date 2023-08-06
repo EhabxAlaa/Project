@@ -54,7 +54,6 @@ class PopupScreen extends StatelessWidget {
           ),
         ],
       ),
-      //backgroundColor: Colors.black,
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/services.dart';
 
 import '../bloc/tic_tac_toe_cubit.dart';
 
@@ -46,6 +47,9 @@ class StartMenuScreenState extends State<StartMenuScreen> {
                 },
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
             Center(
               child: TextButton(
                 child: const Text(
@@ -57,6 +61,24 @@ class StartMenuScreenState extends State<StartMenuScreen> {
                 ),
                 onPressed: () {
                   cubit.setGameMode(false, context);
+                },
+              ),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            Center(
+              child: ElevatedButton(
+                child: const Text(
+                  "Exit",
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                onPressed: () {
+                  SystemNavigator.pop();
                 },
               ),
             ),

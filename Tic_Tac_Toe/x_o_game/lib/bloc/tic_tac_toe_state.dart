@@ -7,3 +7,5 @@ class TicTacToeInitialState extends TicTacToeStates {}
 class SelectGameModeState extends TicTacToeStates {}
 
 class GoToGameScreenState extends TicTacToeStates {}
+
+class GoToStartMenuScreenState extends TicTacToeStates {}

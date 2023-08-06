@@ -5,6 +5,7 @@ import 'package:tic_tac_toe/screens/game_screen.dart';
 
 import '../models/game.dart';
 import '../screens/players_name_screen.dart';
+import '../screens/start_menu_screen.dart';
 
 part 'tic_tac_toe_state.dart';
 
@@ -51,5 +52,18 @@ class TicTacToeCubit extends Cubit<TicTacToeStates> {
       ),
     );
     emit(GoToGameScreenState());
+  }
+
+  goToHomeScreen(context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (BuildContext context2) => BlocProvider.value(
+          value: BlocProvider.of<TicTacToeCubit>(context),
+          child: const StartMenuScreen(),
+        ),
+      ),
+    );
+    emit(GoToStartMenuScreenState());
   }
 }

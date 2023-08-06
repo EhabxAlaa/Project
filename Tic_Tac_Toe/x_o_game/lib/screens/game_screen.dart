@@ -31,14 +31,22 @@ class _GameScreenState extends State<GameScreen> {
         return Scaffold(
           backgroundColor: Colors.black,
           appBar: AppBar(
-            title: const Text('Tic Tac Toe'),
+            title: Transform.translate(
+              offset: const Offset(50.0, 0.0),
+              child: const Text(
+                'Tic Tac Toe',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30,
+                ),
+              ),
+            ),
           ),
           body: Padding(
             padding: const EdgeInsets.all(20),
             child: Center(
               child: SingleChildScrollView(
                 child: Column(
-                  //mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       "${cubit.firstPlayerNameController.text} vs ${cubit.secondPlayerNameController.text}",
@@ -51,7 +59,7 @@ class _GameScreenState extends State<GameScreen> {
                       height: 50,
                     ),
                     Text(
-                      "it is ${cubit.lastplayer} turn",
+                      "it is ${cubit.lastplayer} 's turn",
                       style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -166,16 +174,9 @@ class _GameScreenState extends State<GameScreen> {
                       width: 250,
                       child: ElevatedButton.icon(
                           onPressed: () {
-                            setState(() {
-                              cubit.g.board = Game.initGameBoard();
-                              cubit.lastplayer = "X";
-                              cubit.gameover = false;
-                              cubit.turn = 0;
-                              cubit.res = "";
-                              cubit.scoreboard = [0, 0, 0, 0, 0, 0, 0, 0];
-                            });
+                            cubit.goToHomeScreen(context);
                           },
-                          icon: const Icon(Icons.replay_rounded),
+                          icon: const Icon(Icons.home),
                           label: Center(
                             child: TextButton(
                               child: const Text(
